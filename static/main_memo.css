@@ -1,0 +1,167 @@
+html {
+    height: 100%;
+}
+body {
+    height: inherit;
+    display: grid;
+    grid-template-columns: .5fr 1fr .5fr;
+    grid-template-rows: .5fr 4.5fr;
+    background-image: url('imagen.gif');
+    background-size: cover;
+}
+
+#start{
+    text-align: center;
+}
+
+.LEFT{
+    height: inherit;
+}
+
+.MID{
+    height: inherit;
+    grid-template-columns: 1fr;
+    grid-template-rows: .1fr .1fr .1fr .1fr 4.6fr;
+}
+
+.RIGHT{
+    height: fit-content;
+}
+
+.RIGHT .board{
+    height: inherit;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    margin: 5%;
+    border: solid;
+    padding-top: 0%;
+    padding: 5%;
+    text-align: center;    
+    background-color: white;
+    opacity: .8;
+    border-radius: 15px;
+    transition: all 0.5s;
+}
+
+.board{
+    text-align: center;
+}
+
+.RIGHT .board:hover{
+    transform: scale(1.10);
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+}
+
+#restart {
+    display: none;
+}
+
+#save {
+    display: none;
+}
+
+.MID .message {
+    text-align: center;
+}
+
+.MID .rf {
+    text-align: center;
+}
+
+.MID .p {
+    text-align: center;
+}
+
+.MID .F {
+    text-align: center;
+}
+
+.tiempo {
+    text-align: center;
+    font-size: 60px;
+}
+
+.espacioJuego {
+    padding-top: 0%;
+    padding: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    aspect-ratio: 1;
+}
+
+.espacioJuego .marco {
+    height: 90%;
+    width: 90%;
+    text-align: center;
+    margin: 1%;
+    border: solid;
+    display: grid;
+    background-color: white;
+    opacity: 0.8;
+    transition: all 0.5s;
+}
+
+.espacioJuego .marco:hover {
+    height: 90%;
+    width: 90%;
+    text-align: center;
+    margin: 1%;
+    border: solid;
+    display: grid;
+    transform: scale(1.20);
+    box-shadow: 0 0 5px orange;
+    z-index: 9999;
+}
+
+.espacioJuego .marco .carta{
+    height: 100%;
+    width: 100%;   
+}
+
+.espacioJuego .marco .switch{
+    background-color: aqua;
+    width: 100%;   
+    cursor: pointer;
+}
+.espacioJuego .marco .switch:active{
+    background-color: red;
+}
+
+input[type='submit']{
+    transition: all 0.5s;
+}
+
+input[type='submit']:hover{
+    transform: scale(1.15);
+    box-shadow: 0 0 5px black;
+    z-index: 9999;
+}
+
+#rightB {
+    list-style-type: none;
+}
+
+#rightB li {
+    padding-bottom: 2%;
+    margin-bottom: 3%;
+    margin-right: 10%;
+    list-style-type: none;
+    border-bottom: 1px solid rgb(30, 182, 187) ;
+}
+
+.marco form {
+    height: 100%;
+}
+
+.marco .id {
+    display: none;
+}
+
+.marco .idVisible {
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}

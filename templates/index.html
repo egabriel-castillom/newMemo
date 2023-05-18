@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX TEST</title>    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<link rel="stylesheet" style="text/css" href="{{url_for('static',filename='main_memo.css')}}">
+<body>
+    <div class="LEFT">
+        <form id="clear" class="carta" method="get">                    
+            <input class="switch" type="submit" value="CLEAR"/>                    
+        </form>                
+    </div>
+    <div id = "page-content" class="MID">
+        <div class="board">
+            <div class="tiempo" id="cuenta-regresiva"></div>
+            <form id="start" class="carta" method="get">        
+                <div id = 'container'>
+                    <input type="radio" id="perros" name="animal" value="perros">
+                    <label for="perros">PERROS</label><br>
+                    <input type="radio" id="gatos" name="animal" value="gatos">
+                    <label for="gatos">GATOS</label><br>            
+                </div>
+                <input hidden name="id" id="id" value="x">
+                <input id='startMemo' class="switch" type="submit" value=" INICIAR MEMORAMA "/>             
+            </form>    
+            <form id="save" class="carta" method="get">                    
+                <input class="switch" type="submit" value=" GUARDAR MEMORAMA "/>             
+            </form>    
+            <form id="restart" class="carta" method="get">                                    
+                <input class="switch" type="submit" value=" REINICIAR SIN GUARDAR "/>             
+            </form>    
+            <div id="message" class="message"></div>
+            <div id="rf" class="rf"></div>
+            <div id="PA" class="p"></div>
+        </div>        
+        <div class="espacioJuego">
+            <div class="marco">
+                <form id="load-data1" class="carta" method="post">                    
+                    <input hidden name="id" id="id" value="1">
+                    <input class="switch" type="submit" value=" ELEGIR "/>                    
+                    <div class="id" id="data1"></div>                  
+                </form>                
+            </div>
+            <div class="marco">
+                <form id="load-data2" class="carta" method="post">                    
+                    <input hidden name="id" id="id" value="0.1">
+                    <input class="switch" type="submit" value=" ELEGIR "/>                    
+                    <div class="id" id="data2"></div>                  
+                </form>                
+            </div>
+            <div class="marco">
+                <form id="load-data3" class="carta" method="post">                    
+                    <input hidden name="id" id="id" value="2">
+                    <input class="switch" type="submit" value=" ELEGIR "/>                    
+                    <div class="id" id="data3"></div>                  
+                </form>                
+            </div>
+            <div class="marco">
+                <form id="load-data4" class="carta" method="post">                    
+                    <input hidden name="id" id="id" value="0.2">
+                    <input class="switch" type="submit" value=" ELEGIR "/>                    
+                    <div class="id" id="data4"></div>                  
+                </form>                
+            </div>
+            <div class="marco">
+                <form id="load-data5" class="carta" method="post">                    
+                    <input hidden name="id" id="id" value="3">
+                    <input class="switch" type="submit" value=" ELEGIR "/>                    
+                    <div class="id" id="data5"></div>                  
+                </form>                
+            </div>
+            <div class="marco">
+                <form id="load-data6" class="carta" method="post">                    
+                    <input hidden name="id" id="id" value="0.3">
+                    <input class="switch" type="submit" value=" ELEGIR "/>                    
+                    <div class="id" id="data6"></div>                  
+                </form>                
+            </div>
+            <div class="marco">
+                <form id="load-data7" class="carta" method="post">                    
+                    <input hidden name="id" id="id" value="4">
+                    <input class="switch" type="submit" value=" ELEGIR "/>                    
+                    <div class="id" id="data7"></div>                  
+                </form>                
+            </div>
+            <div class="marco">
+                <form id="load-data8" class="carta" method="post">                    
+                    <input hidden name="id" id="id" value="0.4">
+                    <input class="switch" type="submit" value=" ELEGIR "/>                    
+                    <div class="id" id="data8"></div>                  
+                </form>                
+            </div>
+            <div class="marco">
+                <form id="load-data9" class="carta" method="post">                    
+                    <input hidden name="id" id="id" value="5">
+                    <input class="switch" type="submit" value=" ELEGIR "/>                    
+                    <div class="id" id="data9"></div>                  
+                </form>                
+            </div>
+            <div class="marco">
+                <form id="load-data10" class="carta" method="post">                    
+                    <input hidden name="id" id="id" value="0.55">
+                    <input class="switch" type="submit" value=" ELEGIR "/>                    
+                    <div class="id" id="data10"></div>                  
+                </form>                
+            </div>
+            <div class="marco">
+                <form id="load-data11" class="carta" method="post">                    
+                    <input hidden name="id" id="id" value="6">
+                    <input class="switch" type="submit" value=" ELEGIR "/>                    
+                    <div class="id" id="data11"></div>                  
+                </form>                
+            </div>
+            <div class="marco">
+                <form id="load-data12" class="carta" method="post">                    
+                    <input hidden name="id" id="id" value=".66">
+                    <input class="switch" type="submit" value=" ELEGIR "/>                    
+                    <div class="id" id="data12"></div>                  
+                </form>                
+            </div>
+            </div>
+        </div>    
+    </div>
+    <div class="RIGHT">
+        <div class="board">
+            <li id="rightB">
+                RESULTADOS:
+                <script>
+                    
+                </script>
+            </li>
+        </div>   
+        <script src="{{ url_for('static', filename='dogs.js') }}"></script>
+        <script src="{{ url_for('static', filename='cats.js') }}"></script>
+        <script src="{{ url_for('static', filename='go.js') }}"></script>
+        <script src="{{ url_for('static', filename='cr.js') }}"></script>
+        <script src="{{ url_for('static', filename='ran.js') }}"></script>
+        <script src="{{ url_for('static', filename='startAjax.js') }}"></script>
+        <script src="{{ url_for('static', filename='AJAX.js') }}"></script>
+        <script src="{{ url_for('static', filename='CLEAR.js') }}"></script>    
+        <script src="{{ url_for('static', filename='indices.js') }}"></script>
+        <script>
+            $(document).ready(function() {
+                gameOverSave('#save');
+                clearSC('#clear');
+                clearSC('#restart');
+                initStart('#start','#message');
+                setupForm('#load-data1', '#message' ,'#data1','#rf','#PA');
+                setupForm('#load-data2', '#message' ,'#data2','#rf','#PA');
+                setupForm('#load-data3', '#message' ,'#data3','#rf','#PA');
+                setupForm('#load-data4', '#message' ,'#data4','#rf','#PA');
+                setupForm('#load-data5', '#message' ,'#data5','#rf','#PA');
+                setupForm('#load-data6', '#message' ,'#data6','#rf','#PA');
+                setupForm('#load-data7', '#message' ,'#data7','#rf','#PA');
+                setupForm('#load-data8', '#message' ,'#data8','#rf','#PA');
+                setupForm('#load-data9', '#message' ,'#data9','#rf','#PA');
+                setupForm('#load-data10', '#message' ,'#data10','#rf','#PA');
+                setupForm('#load-data11', '#message' ,'#data11','#rf','#PA');
+                setupForm('#load-data12', '#message' ,'#data12','#rf','#PA');
+            });
+        </script>
+    </div>   
+</body> 
+</html>
