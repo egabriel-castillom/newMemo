@@ -12,6 +12,7 @@ body {
 
 #start{
     text-align: center;
+    padding-bottom: 2%;
 }
 
 .LEFT{
@@ -61,8 +62,20 @@ body {
     display: none;
 }
 
-.MID .message {
+.message {
     text-align: center;
+}
+
+.notMessage {
+    display: none;
+}
+
+.cont {
+    display: block;
+}
+
+.notCont {
+    display: none;
 }
 
 .MID .rf {
@@ -97,7 +110,7 @@ body {
     text-align: center;
     margin: 1%;
     border: solid;
-    display: grid;
+    display: grid;  
     background-color: white;
     opacity: 0.8;
     transition: all 0.5s;
@@ -124,7 +137,18 @@ body {
     background-color: aqua;
     width: 100%;   
     cursor: pointer;
+    height: 100%;
+    transition: all 0.2s;
 }
+
+.espacioJuego .marco .switchX{
+    background-color: aqua;
+    width: 100%;   
+    cursor: pointer;
+    height: 0%;
+    transition: all 0.2s;
+}
+
 .espacioJuego .marco .switch:active{
     background-color: red;
 }
@@ -153,15 +177,23 @@ input[type='submit']:hover{
 
 .marco form {
     height: 100%;
+    background-size: contain;
+    background-position: center;
 }
 
 .marco .id {
     display: none;
+    opacity: 0;
+    transition: all 0.2s;
 }
 
 .marco .idVisible {
-    background-size: contain;
-    background-position: center;
     width: 100%;
     height: 100%;
+    opacity: 1;
+    transition: all 0.2s;
+}
+
+li {
+    text-align: left;
 }

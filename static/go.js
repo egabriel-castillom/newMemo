@@ -28,9 +28,15 @@ function  gameOverSave (formNameid) {
         rightB.appendChild(newUlRB);
 
     }      
-
+    // Cuando se guarda un juego. Se registra.
     $(formNameid).submit(function(event) {
         event.preventDefault();
+        if (sessionStorage.getItem('games')){
+            var newGames = Number(sessionStorage.getItem('games'));
+            var games = newGames + 1;    
+        };
+        console.log(games.toString());
+        sessionStorage.setItem('games',games.toString());
         const rightB = document.querySelector('#rightB');
         const newUlRB = document.createElement('ul');
         const myDict = JSON.parse(sessionStorage.getItem('myDict'));

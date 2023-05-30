@@ -13,7 +13,7 @@ def roundId():
     message = '(' + id + ') id en sesión 1.'
     if session.get('P') == None:      
         session['P'] = '0'
-    return jsonify(message=message,id=id)        
+    return jsonify(id=id)        
 
 def roundID():
     id = session.get('id')
@@ -29,7 +29,7 @@ def roundID():
         same = 1
         session.pop('iD')
         message=str(id) +' ya se ha seleccionado en la ronda actual.'
-        return jsonify(message=message,id = id,same=same)
+        return jsonify(id = id,same=same)
     elif RF in results:
         rfo = 'CORRECTO ' + rf
         p = session.get('P')
@@ -40,14 +40,14 @@ def roundID():
         appendSessionList(iD)
         session.pop('id',None)
         session.pop('iD',None)
-        return jsonify(message=message,id=iD,rf=rfo,PA=PA)
+        return jsonify(id=iD,rf=rfo,PA=PA)
     else:
         rfo = 'NO SE ENCUENTRA EN RESULTADOS | id (' + id + ') + iD (' + iD + ') = ' + rf
         session.pop('id',None)
         session.pop('iD',None)
         session['F'] = 1
         F = session.get('F')
-        return jsonify(message=message,id=iD,rf = rfo,F=F)
+        return jsonify(id=iD,rf = rfo,F=F)
 
 def appendSessionList(item):
     l = session['l']

@@ -13,11 +13,11 @@ function dogs(){
     imagesData.map(function(imageData) {
       let imageUrl = imageData.url;
       incrementalVal = incrementalVal + 1;
-      let dato = document.getElementById('data' + String(incrementalVal));
+      let dato = document.getElementById('load-data' + String(incrementalVal));
       dato.style.backgroundImage = `url('${imageUrl}')`;
   
       incrementalVal = incrementalVal + 1;
-      let datox = document.getElementById('data' + String(incrementalVal));
+      let datox = document.getElementById('load-data' + String(incrementalVal));
       datox.style.backgroundImage = `url('${imageUrl}')`;
     });
     })

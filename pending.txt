@@ -1,3 +1,5 @@
-#Si el juego no se ha culminado, ya sea por tiempo o por puntos. No aumentar el contador de juegos. //¿Hacer la comprobación en CLEAR?
-#Seleccion valida en toda la carta, no más botón 'ELEGIR'.
 #Reaccion de fondo dependiendo de la acción.
+(main.py return; CORRECTO, NO EN RESULTADOS. | Elemento en sesión)
+(radioListener.js)
+#Agrega sonidos sutiles para cada acción.
+#Refactoriza el código, que luzca elegante.

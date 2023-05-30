@@ -1,4 +1,5 @@
 function setupForm() {
+  let selSw = [];
   let formNameid
   if (arguments.length > 0) {
     formNameid = arguments[0];
@@ -24,6 +25,15 @@ function setupForm() {
 
   $(formNameid).submit(function(event) {
       event.preventDefault();
+      let formR = formNameid.replace('#','');
+      let form = document.getElementById(formR);
+      let elex = form.querySelector('.switch');
+      if (sessionStorage.getItem('selSw') === null){
+        sessionStorage.setItem('selSw', JSON.stringify(formR));
+      };
+      elex.classList.remove('switch');
+      elex.classList.add('switchX');  
+      console.log(formR);
       $.ajax({
           url: '/get-data',
           type: 'POST',
@@ -60,12 +70,6 @@ function setupForm() {
                     $(dataNameid).html('');
                     let lastElementNoHash = lastElement.replace(/#/g, "");
                     let lastelementNH = document.getElementById(lastElementNoHash);
-                    for (let i = 0; i < marcos.length; i++) {
-                        let inputs = marcos[i].querySelectorAll("input");
-                        for (let j = 0; j < inputs.length; j++) {
-                            inputs[j].disabled = false;
-                        }
-                    };
                     fetch('/get-data')
                     .then(response => response.json())
                     .then(data => {
@@ -77,23 +81,37 @@ function setupForm() {
                       lastelementNH.classList.add('id');                    
                     })
                     .catch(error => console.error(error))
-                    for (let i = 0; i < marcos.length; i++) {
-                      let inputs = marcos[i].querySelectorAll("input");
-                      for (let j = 0; j < inputs.length; j++) {
-                          inputs[j].disabled = false;
-                      }
-                    };
-                  }, 2000);
+                    setTimeout(function(){
+                      for (let i = 0; i < marcos.length; i++) {
+                        let inputs = marcos[i].querySelectorAll("input");
+                        for (let j = 0; j < inputs.length; j++) {
+                            inputs[j].disabled = false;
+                        }
+                      };
+                    },400);
+                  }, 1900);
+                  setTimeout(function(){
+                      let selSw = JSON.parse(sessionStorage.getItem('selSw')); 
+                      let lastForm = document.getElementById(selSw);
+                      let lastElex = lastForm.querySelector('.switchX');
+                      elex.classList.remove('switchX');
+                      elex.classList.add('switch');                  
+                      lastElex.classList.remove('switchX');
+                      lastElex.classList.add('switch');
+                      sessionStorage.removeItem('selSw');
+                  },2000);
                 }else{
                   var retrievedList = JSON.parse(sessionStorage.getItem('myList'));                  
                   retrievedList.push(dataNameid);
                   sessionStorage.setItem('myList', JSON.stringify(retrievedList));                  
-                  }
+                  };
                   if (data.rf !== undefined){
                     $(finalResid).html(data.rf);
                   }
                   if (data.PA !== undefined){
                     $(pAid).html(data.PA);
+                    sessionStorage.removeItem('selSw');
+                    //Cuando se ha completado un juego con todos los puntos, genera variable de lastGameWin.
                     if (data.PA.includes('6')){
                       sessionStorage.setItem('gameOver','1');
                       sessionStorage.setItem('stopCounter','1');
@@ -106,7 +124,6 @@ function setupForm() {
                           $('#message').html(data.message);  
                           $('#rf').html('');
                           $('#cuenta-regresiva').html('NUEVO RECORD: ' + sessionStorage.getItem('record')+' segundos!');
-                          $('#PA').html('Puntuación: ' + data.PA);
                         })
                         .catch(error => console.error(error))
                         let sv = document.getElementById('save')

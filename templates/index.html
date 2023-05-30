@@ -18,7 +18,7 @@
         <div class="board">
             <div class="tiempo" id="cuenta-regresiva"></div>
             <form id="start" class="carta" method="get">        
-                <div id = 'container'>
+                <div id='container' class="cont">
                     <input type="radio" id="perros" name="animal" value="perros">
                     <label for="perros">PERROS</label><br>
                     <input type="radio" id="gatos" name="animal" value="gatos">
@@ -142,8 +142,8 @@
         <script src="{{ url_for('static', filename='startAjax.js') }}"></script>
         <script src="{{ url_for('static', filename='AJAX.js') }}"></script>
         <script src="{{ url_for('static', filename='CLEAR.js') }}"></script>    
-        <script src="{{ url_for('static', filename='indices.js') }}"></script>
-        <script>
+        <script src="{{ url_for('static', filename='radioListener.js') }}"></script>   
+        <script> 
             $(document).ready(function() {
                 gameOverSave('#save');
                 clearSC('#clear');

@@ -23,11 +23,21 @@
                   $('#message').html(data.message);  
                   $('#rf').html('');
                   $('#cuenta-regresiva').html('¡SE HA ACABADO EL TIEMPO!');
-                  $('#PA').html('Puntuación: ' + data.PA);
                 })
                 .catch(error => console.error(error))
-              }, 1000);                      
-        }
+              }, 1000);
+            let marcos = document.querySelectorAll(".marco");
+            for (let i = 0; i < marcos.length; i++) {
+                let inputs = marcos[i].querySelectorAll("input");
+                for (let j = 0; j < inputs.length; j++) {
+                    inputs[j].disabled = true;
+                }
+            };
+            sessionStorage.setItem('stopCounter', '1');
+            let rr = document.getElementById('restart')
+            rr.style.display = 'inline-block'
+            document.querySelector('#restart .switch').value = 'VOLVER A JUGAR!';
+        };
         sessionStorage.setItem('tiempoRestante', tiempoRestante.toString());
         console.log('Restando uno..');
         if (tiempoRestante >= 0) {
