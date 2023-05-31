@@ -105,8 +105,39 @@ function setupForm() {
                   retrievedList.push(dataNameid);
                   sessionStorage.setItem('myList', JSON.stringify(retrievedList));                  
                   };
+                  //Se cambia el color del fondo, dependiendo del resultado.                  
                   if (data.rf !== undefined){
                     $(finalResid).html(data.rf);
+                    if (data.rf === 'CORRECTO'){
+                      console.log('correito');
+                      let espacioJuego = document.querySelectorAll('.espacioJuego .marco');
+                      for (let i = 0; i < espacioJuego.length; i++) {
+                        espacioJuego[i].classList.remove('marco');
+                        espacioJuego[i].classList.add('marcoCorrecto');
+                      };
+                      setTimeout(function(){
+                      let espacioJuegoCorrecto = document.querySelectorAll('.espacioJuego .marcoCorrecto');
+                      for (let i = 0; i < espacioJuegoCorrecto.length; i++) {
+                        espacioJuegoCorrecto[i].classList.remove('marcoCorrecto');
+                        espacioJuegoCorrecto[i].classList.add('marco');
+                      };
+                      },500);                                       
+                    };
+                    if(data.rf === 'INCORRECTO'){
+                      console.log('incorreito');
+                      let espacioJuego = document.querySelectorAll('.espacioJuego .marco');
+                      for (let i = 0; i < espacioJuego.length; i++) {
+                        espacioJuego[i].classList.remove('marco');
+                        espacioJuego[i].classList.add('marcoInorrecto');
+                      };
+                      setTimeout(function(){
+                      let espacioJuegoIncorrecto = document.querySelectorAll('.espacioJuego .marcoInorrecto');
+                      for (let i = 0; i < espacioJuegoIncorrecto.length; i++) {
+                        espacioJuegoIncorrecto[i].classList.remove('marcoInorrecto');
+                        espacioJuegoIncorrecto[i].classList.add('marco');
+                      };
+                      },500);                                       
+                    };
                   }
                   if (data.PA !== undefined){
                     $(pAid).html(data.PA);

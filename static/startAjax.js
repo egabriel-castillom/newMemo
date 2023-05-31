@@ -70,6 +70,9 @@ function initStart(start,message) {
                 animalImg[i].classList.remove('id');
                 animalImg[i].classList.add('idVisible');
             };
+            tiempo = document.querySelector('.tiempo');
+            tiempo.classList.remove('tiempo');
+            tiempo.classList.add('notTiempo');
             message = document.querySelector('.message');
             message.classList.remove('message');
             message.classList.add('notMessage');
@@ -84,6 +87,9 @@ function initStart(start,message) {
                     notMessage = document.querySelector('.notMessage');
                     notMessage.classList.remove('notMessage');
                     notMessage.classList.add('message');
+                    notTiempo = document.querySelector('.notTiempo');
+                    notTiempo.classList.remove('notTiempo');
+                    notTiempo.classList.add('tiempo');
                     let switches = document.querySelectorAll('.marco .carta .switchX');
                     for (let i = 0; i < switches.length; i++) {
                         switches[i].classList.remove('switchX');

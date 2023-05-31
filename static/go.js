@@ -58,6 +58,9 @@ function  gameOverSave (formNameid) {
         //Se modifica el valor de ambos elementos después de guardar el nuevo resultado del juego.
         document.getElementById('save').style.display = 'none';
         document.querySelector('#restart .switch').value = 'VOLVER A JUGAR!';
+        message = document.querySelector('.message');
+        message.classList.remove('message');
+        message.classList.add('notMessage');
     });
 };
 //let tiempo = retrieveDict['game0']['tiempo'];

@@ -96,6 +96,10 @@ body {
     font-size: 60px;
 }
 
+.notTiempo {
+    display: none;
+}
+
 .espacioJuego {
     padding-top: 0%;
     padding: 5%;
@@ -103,6 +107,50 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     aspect-ratio: 1;
+    transition: all 0.2s;
+}
+
+.espacioJuego {
+    padding-top: 0%;
+    padding: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    aspect-ratio: 1;
+    transition: all 0.2s;
+}
+
+.espacioJuego .marcoOnsel {
+    height: 90%;
+    width: 90%;
+    text-align: center;
+    margin: 1%;
+    border: solid yellow;
+    display: grid;  
+    opacity: 0.8;
+    transition: all 0.2s; 
+}
+
+.espacioJuego .marcoCorrecto {
+    height: 90%;
+    width: 90%;
+    text-align: center;
+    margin: 1%;
+    border: solid green;
+    display: grid;  
+    opacity: 0.8;
+    transition: all 0.3s; 
+}
+
+.espacioJuego .marcoIncorrecto {
+    height: 90%;
+    width: 90%;
+    text-align: center;
+    margin: 1%;
+    border: solid red;
+    display: grid;  
+    opacity: 0.8;
+    transition: all 0.3s;
 }
 
 .espacioJuego .marco {
