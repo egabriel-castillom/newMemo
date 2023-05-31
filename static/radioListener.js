@@ -8,8 +8,10 @@
       // Modificar la plantilla en función del valor seleccionado
       if (selectedValue === 'perros') {
         // Código para modificar la plantilla cuando se selecciona perros
+        document.body.style.backgroundImage="url('static/dog.jpg')";
       } else if (selectedValue === 'gatos') {
         // Código para modificar la plantilla cuando se selecciona gatos
+        document.body.style.backgroundImage="url('static/cat.jpg')";
       }
     });
   });

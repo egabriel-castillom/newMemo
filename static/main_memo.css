@@ -6,8 +6,9 @@ body {
     display: grid;
     grid-template-columns: .5fr 1fr .5fr;
     grid-template-rows: .5fr 4.5fr;
-    background-image: url('imagen.gif');
+    background-image: url('animals.jpg');
     background-size: cover;
+    transition: all 0.5s;
 }
 
 #start{
