@@ -48,6 +48,9 @@ function initStart(start,message) {
                     inputs[j].disabled = false;
                 }
             };
+            let clearButton = document.querySelector('.noSwitch');
+            clearButton.classList.remove('noSwitch');
+            clearButton.classList.add('switch');
             let radioButtons = document.querySelectorAll('input[type=radio][name=animal]');
             radioButtons.forEach(radio => {
                 radio.classList.remove('cont');

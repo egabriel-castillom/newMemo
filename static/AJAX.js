@@ -33,7 +33,6 @@ function setupForm() {
       };
       elex.classList.remove('switch');
       elex.classList.add('switchX');  
-      console.log(formR);
       $.ajax({
           url: '/get-data',
           type: 'POST',
@@ -107,35 +106,32 @@ function setupForm() {
                   };
                   //Se cambia el color del fondo, dependiendo del resultado.                  
                   if (data.rf !== undefined){
-                    $(finalResid).html(data.rf);
                     if (data.rf === 'CORRECTO'){
-                      console.log('correito');
-                      let espacioJuego = document.querySelectorAll('.espacioJuego .marco');
-                      for (let i = 0; i < espacioJuego.length; i++) {
-                        espacioJuego[i].classList.remove('marco');
-                        espacioJuego[i].classList.add('marcoCorrecto');
-                      };
+                      let espacioJuego = document.querySelector('.board');
+//                      for (let i = 0; i < espacioJuego.length; i++) {
+                        espacioJuego.classList.remove('board');
+                        espacioJuego.classList.add('boardCorrecto');
+//                      };
                       setTimeout(function(){
-                      let espacioJuegoCorrecto = document.querySelectorAll('.espacioJuego .marcoCorrecto');
-                      for (let i = 0; i < espacioJuegoCorrecto.length; i++) {
-                        espacioJuegoCorrecto[i].classList.remove('marcoCorrecto');
-                        espacioJuegoCorrecto[i].classList.add('marco');
-                      };
+                      let espacioJuegoCorrecto = document.querySelector('.boardCorrecto');
+//                    for (let i = 0; i < espacioJuegoCorrecto.length; i++) {
+                        espacioJuegoCorrecto.classList.remove('boardCorrecto');
+                        espacioJuegoCorrecto.classList.add('board');
+//                      };
                       },500);                                       
                     };
                     if(data.rf === 'INCORRECTO'){
-                      console.log('incorreito');
-                      let espacioJuego = document.querySelectorAll('.espacioJuego .marco');
-                      for (let i = 0; i < espacioJuego.length; i++) {
-                        espacioJuego[i].classList.remove('marco');
-                        espacioJuego[i].classList.add('marcoInorrecto');
-                      };
+                      let espacioJuego = document.querySelector('.board');
+//                      for (let i = 0; i < espacioJuego.length; i++) {
+                        espacioJuego.classList.remove('board');
+                        espacioJuego.classList.add('boardIncorrecto');
+//                      };
                       setTimeout(function(){
-                      let espacioJuegoIncorrecto = document.querySelectorAll('.espacioJuego .marcoInorrecto');
-                      for (let i = 0; i < espacioJuegoIncorrecto.length; i++) {
-                        espacioJuegoIncorrecto[i].classList.remove('marcoInorrecto');
-                        espacioJuegoIncorrecto[i].classList.add('marco');
-                      };
+                      let espacioJuegoIncorrecto = document.querySelector('.boardIncorrecto');
+//                      for (let i = 0; i < espacioJuegoIncorrecto.length; i++) {
+                        espacioJuegoIncorrecto.classList.remove('boardIncorrecto');
+                        espacioJuegoIncorrecto.classList.add('board');
+//                      };
                       },500);                                       
                     };
                   }
@@ -147,12 +143,13 @@ function setupForm() {
                       sessionStorage.setItem('gameOver','1');
                       sessionStorage.setItem('stopCounter','1');
                       actualizarCuentaRegresiva();                  
+                      $(pAid).html('');
                       setTimeout(function() {
                         let valor1 = '1'
                         fetch('/get-data?valor1=' + valor1,{method:'GET',headers: {'Content-Type':'application/json'}})
                         .then(response => response.json())
                         .then(data => {
-                          $('#message').html(data.message);  
+                          $('#message').html('');  
                           $('#rf').html('');
                           $('#cuenta-regresiva').html('NUEVO RECORD: ' + sessionStorage.getItem('record')+' segundos!');
                         })

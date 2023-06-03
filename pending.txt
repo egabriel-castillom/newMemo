@@ -1,8 +1,5 @@
-#Reaccion de fondo dependiendo de la acción.
-(AJAX.js & main_memo.css; CORRECTO CAPA VERDE, NO EN RESULTADOS CAPA ROJA. | Elemento en sesión)
 #Animación de mezcla, antes de iniciar memorama
-#Hacer las letras más pequeñas en algunos displays.
+#Botón de perros/gatos
 #Eliminar algunos de los displays no necesarios.
 #Refactoriza el código, que luzca elegante.
-
 #EN PORTAFIOLIO, AGREGAR SONIDOS CHIDOTES PA#
