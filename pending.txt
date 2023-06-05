@@ -1,5 +1,6 @@
 #Animación de mezcla, antes de iniciar memorama
-#Botón de perros/gatos
 #Eliminar algunos de los displays no necesarios.
+#AZURE DEPLOYMENT FOR HOSTING AND CUSTOM URL.
 #Refactoriza el código, que luzca elegante.
+
 #EN PORTAFIOLIO, AGREGAR SONIDOS CHIDOTES PA#

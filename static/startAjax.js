@@ -15,8 +15,10 @@ for (let i = 0; i < marcos.length; i++) {
 
 function initStart(start,message) {      
     $(start).submit(function(event) {
+        let idButton = document.getElementById("myButton");
         event.preventDefault();
-        if($('#perros').is(':checked') || $('#gatos').is(':checked')){
+        console.log(idButton.innerHTML);
+        if(idButton.innerHTML === 'Perros' || idButton.innerHTML === 'Gatos'){
             $.ajax({
                 url: '/get-data',
                 type: 'POST',
@@ -27,10 +29,10 @@ function initStart(start,message) {
                     sessionStorage.setItem('startCounter','1')
                     }    
                     igualASesenta();                       
-                    if ($('#perros').is(':checked')) {
+                    if (idButton.innerHTML === 'Perros') {
                         dogs();
                     }
-                    if ($('#gatos').is(':checked')) {
+                    if (idButton.innerHTML === 'Gatos') {
                         cats();
                     }
                     document.getElementById('startMemo').style.display = 'none';     
@@ -51,15 +53,9 @@ function initStart(start,message) {
             let clearButton = document.querySelector('.noSwitch');
             clearButton.classList.remove('noSwitch');
             clearButton.classList.add('switch');
-            let radioButtons = document.querySelectorAll('input[type=radio][name=animal]');
-            radioButtons.forEach(radio => {
-                radio.classList.remove('cont');
-                radio.classList.add('notCont');
-            });
-            let labelRadio = document.querySelectorAll('label');
-            labelRadio.forEach(label => {
-                label.classList.add('notCont');
-            });
+            let choiceButton = document.querySelector('.cont')
+            choiceButton.classList.remove('cont');
+            choiceButton.classList.add('notCont');
             //Por defecto, al seleccionar el tipo de memorama e iniciarlo, se muestran
             //las imagenes por diez segundos y después se ocultan para después reorganizarse
             //de manera aleatoria.

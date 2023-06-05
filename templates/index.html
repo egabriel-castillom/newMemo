@@ -11,19 +11,26 @@
 <body>
     <div class="LEFT">
         <form id="clear" class="carta" method="get">                    
-            <input class="noSwitch" type="submit" value="CLEAR"/>                    
+            <input class="noSwitch" type="submit" value="SALIR"/>                    
         </form>                
     </div>
     <div id = "page-content" class="MID">
         <div class="board">
             <div class="tiempo" id="cuenta-regresiva"></div>
+            <div id='container' class="cont">
+                <button id="myButton" onclick="changeText()">¿PERROS O GATOS?</button>
+                <script>
+                  function changeText() {
+                    var button = document.getElementById("myButton");
+                    if (button.innerHTML === "Perros") {
+                      button.innerHTML = "Gatos";
+                    } else {
+                      button.innerHTML = "Perros";
+                    }
+                  }
+                </script>
+            </div>
             <form id="start" class="carta" method="get">        
-                <div id='container' class="cont">
-                    <input type="radio" id="perros" name="animal" value="perros">
-                    <label for="perros">PERROS</label><br>
-                    <input type="radio" id="gatos" name="animal" value="gatos">
-                    <label for="gatos">GATOS</label><br>            
-                </div>
                 <input hidden name="id" id="id" value="x">
                 <input id='startMemo' class="switch" type="submit" value=" INICIAR MEMORAMA "/>             
             </form>    

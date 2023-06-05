@@ -2,9 +2,9 @@ html {
     height: 100%;
 }
 body {
-    height: 100%;
+    height: 90%;
     display: grid;
-    grid-template-columns: .4fr 1.0fr .6fr;
+    grid-template-columns: .2fr 1.2fr .6fr;
     grid-template-rows: .5fr 4.5fr;
     background-image: url('animals.jpg');
     background-size: cover;
@@ -21,7 +21,7 @@ body {
 }
 
 .MID{
-    height: 100%;
+    height: 80%;
     grid-template-columns: 1fr;
     grid-template-rows: .1fr .1fr .1fr .1fr 4.6fr;
     transition: all 0.2s;
@@ -105,57 +105,48 @@ body {
 .espacioJuego {
     padding-top: 0%;
     padding: 5%;
+    padding-left: 12%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     aspect-ratio: 1;
     transition: all 0.2s;
+    height: 85%;
+    width:  75%;
 }
 
-@media (max-width: 1050px) {
-    .espacioJuego {  
-      padding-left:15%;
-      height: 100%;
-      width: 70%;
+@media (max-width: 646px) {
+    .espacioJuego { 
+      padding-left:15% ;
+      height: 105%;
+      width: 85%;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: repeat(6, 1fr);
     }
     .MID{
         height: 150%;    
     }
+    #myButton{
+        font-size: 10px
+    };
+    .switch{
+        font-size:10px ;
+    };
   }
 
-@media (max-height:580px) {
-    .espacioJuego {  
-        padding-left:15%;
-        height: 100%;
-        width: 70%;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: 1fr 1fr;
-      }
-    .MID{
-        height: 25%;    
+@media (max-width: 1300px) {
+    .espacioJuego { 
+      height: 90%;
+      width: 90%;
     }
-    body {
-        grid-template-columns: .1fr 1.6fr .3fr;
-    }
-};
+    #myButton{
+        font-size: 10px
+    };
+    .switch{
+        font-size:10px ;
+    };
+  }
 
-@media (max-width: 1050px) and (max-height:580px) {
-    .espacioJuego {  
-        padding-left:15%;
-        height: 100%;
-        width: 70%;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: 1fr 1fr;
-      }
-    .MID{
-        height: 25%;    
-    }
-    body {
-        grid-template-columns: .1fr 1.6fr .3fr;
-    }
-};
 
 .boardOnsel{
     text-align: center;
@@ -181,7 +172,7 @@ body {
     height: 90%;
     width: 90%;
     text-align: center;
-    margin: 1%;
+    margin: .5%;
     border: solid;
     display: grid;  
     background-color: white;
@@ -283,3 +274,11 @@ li {
 ul {
     padding: 0;
 }
+
+#myButton {
+    height: 18%;
+    width: 28%;
+    padding: 2%;
+    margin-top: 2%;
+    margin-bottom: 5%
+};
