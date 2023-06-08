@@ -1,4 +1,18 @@
+
+- CAMBIAR TAMAÑO DE DISTRIBUCIÓN Y OCULTAR ELEMENTOS NO necesarios
+PARA QUE NO ESTROBEN
+
+FASE X  - SELECCIONAR PERROS - GATOS, JUGAR | VER TABLA DE RESULTADOS
+FASE X1 - JUEGO - VUELTA A MENU PRINCIPAL (SALIR) 
+FASE X2 - RESULTADOS - VUELTA A MENU PRINCIPAL (SALIR)
+Oragnizar vistas para las fases.
+Que luzcan organizadas.
+
+Tamaños para 'responsiveness on mobile devices' desde DEVTOOLS (FN + F12)
+movil - (W 412 - 280).
+
 #Animación de mezcla, antes de iniciar memorama
+https://www.lambdatest.com/blog/css-animations-tutorial/
 #Eliminar algunos de los displays no necesarios.
 #AZURE DEPLOYMENT FOR HOSTING AND CUSTOM URL.
 #Refactoriza el código, que luzca elegante.

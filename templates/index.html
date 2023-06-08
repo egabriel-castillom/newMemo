@@ -9,12 +9,10 @@
 </head>
 <link rel="stylesheet" style="text/css" href="{{url_for('static',filename='main_memo.css')}}">
 <body>
-    <div class="LEFT">
+    <div id = "page-content" class="MID">
         <form id="clear" class="carta" method="get">                    
             <input class="noSwitch" type="submit" value="SALIR"/>                    
         </form>                
-    </div>
-    <div id = "page-content" class="MID">
         <div class="board">
             <div class="tiempo" id="cuenta-regresiva"></div>
             <div id='container' class="cont">
@@ -40,11 +38,14 @@
             <form id="restart" class="carta" method="get">                                    
                 <input class="switch" type="submit" value=" REINICIAR SIN GUARDAR "/>             
             </form>    
+            <div id='container' class="contMR">
+                <button id="myResults" onclick="viewResults()">VER RESULTADOS</button>
+            </div>
             <div id="message" class="message"></div>
             <div id="rf" class="rf"></div>
             <div id="PA" class="p"></div>
         </div>        
-        <div class="espacioJuego">
+        <div class="notContEJ">
             <div class="marco">
                 <form id="load-data1" class="carta" method="post">                    
                     <input hidden name="id" id="id" value="1">
@@ -133,7 +134,7 @@
         </div>    
     </div>
     <div class="RIGHT">
-        <div class="board">
+        <div class="notContRboard">
             <li id="rightB">
                 Resultados:
                 <script>
@@ -141,6 +142,12 @@
                 </script>
             </li>
         </div>   
+        <div id='container' class="notContR">
+            <button onclick="closeResults()">Volver</button>
+        </div>
+        <script src="{{ url_for('static', filename='modifyCssRule.js') }}"></script>
+        <script src="{{ url_for('static', filename='inGame.js') }}"></script>
+        <script src="{{ url_for('static', filename='inResults.js') }}"></script>
         <script src="{{ url_for('static', filename='dogs.js') }}"></script>
         <script src="{{ url_for('static', filename='cats.js') }}"></script>
         <script src="{{ url_for('static', filename='go.js') }}"></script>
@@ -149,7 +156,7 @@
         <script src="{{ url_for('static', filename='startAjax.js') }}"></script>
         <script src="{{ url_for('static', filename='AJAX.js') }}"></script>
         <script src="{{ url_for('static', filename='CLEAR.js') }}"></script>    
-        <script src="{{ url_for('static', filename='radioListener.js') }}"></script>   
+        <script src="{{ url_for('static', filename='radioListener.js') }}"></script>
         <script> 
             $(document).ready(function() {
                 gameOverSave('#save');

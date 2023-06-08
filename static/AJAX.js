@@ -156,8 +156,8 @@ function setupForm() {
                         .catch(error => console.error(error))
                         let sv = document.getElementById('save')
                         let rr = document.getElementById('restart')
-                        sv.style.display = 'inline-block'
-                        rr.style.display = 'inline-block'
+                        sv.style.display = 'inline'
+                        rr.style.display = 'inline'
                       }, 3000);                      
                   }
                   }          

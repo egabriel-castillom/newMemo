@@ -4,8 +4,7 @@ html {
 body {
     height: 90%;
     display: grid;
-    grid-template-columns: .2fr 1.2fr .6fr;
-    grid-template-rows: .5fr 4.5fr;
+    grid-template-columns: 1.9fr .1fr;
     background-image: url('animals.jpg');
     background-size: cover;
     transition: all 0.5s;
@@ -13,7 +12,16 @@ body {
 
 #start{
     text-align: center;
+    display: grid;
+    place-content: center;
     padding-bottom: 2%;
+    height: 100%;
+    width: 100%;
+}
+
+#startMemo{
+    padding-top: 30%;
+    padding-bottom: 30%;
 }
 
 .LEFT{
@@ -21,9 +29,9 @@ body {
 }
 
 .MID{
-    height: 80%;
-    grid-template-columns: 1fr;
-    grid-template-rows: .1fr .1fr .1fr .1fr 4.6fr;
+    height: inherit;
+    display: grid;
+    grid-template-rows:.1fr 4.8fr .1fr ;
     transition: all 0.2s;
 }
 
@@ -31,9 +39,11 @@ body {
     height: fit-content;
 }
 
-.RIGHT .board{
+.Rboard{
     height: inherit;
     display: grid;
+    text-align: center;
+    place-items: center;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     margin: 5%;
@@ -48,11 +58,14 @@ body {
 }
 
 .board{
+    height: 100%;
+    display: grid;
+    place-items: center;
     text-align: center;
     transition: all 0.35s;
 }
 
-.RIGHT .board:hover{
+.Rboard:hover{
     transform: scale(1.10);
     box-shadow: 0 0 5px rgb(0, 0, 0);
 }
@@ -75,9 +88,48 @@ body {
 
 .cont {
     display: block;
+    height: 80%;
+    width: 60%;
+}
+
+.contMR {
+    display: block;
+    height: 60%;
+    width: 70%
+}
+
+#myResults{
+    height: 90%; 
+    width:60%;
+};
+
+.contR {
+    display: block;
+    height: 60%;
+    width: 40%;
 }
 
 .notCont {
+    display: none;
+}
+
+.notContEJ {
+    display: none;
+}
+
+.notContR {
+    display: none;
+}
+
+.notContRboard {
+    display: none;
+}
+
+.notContM {
+    display: none;
+}
+
+.notContMR {
     display: none;
 }
 
@@ -107,18 +159,19 @@ body {
     padding: 5%;
     padding-left: 12%;
     display: grid;
+    place-content: center;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     aspect-ratio: 1;
     transition: all 0.2s;
-    height: 85%;
-    width:  75%;
+    height: 75%;
+    width:  55%;
 }
 
 @media (max-width: 646px) {
     .espacioJuego { 
       padding-left:15% ;
-      height: 105%;
+      height: 70%;
       width: 85%;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: repeat(6, 1fr);
@@ -126,27 +179,10 @@ body {
     .MID{
         height: 150%;    
     }
-    #myButton{
-        font-size: 10px
-    };
     .switch{
-        font-size:10px ;
+        font-size:15px ;
     };
   }
-
-@media (max-width: 1300px) {
-    .espacioJuego { 
-      height: 90%;
-      width: 90%;
-    }
-    #myButton{
-        font-size: 10px
-    };
-    .switch{
-        font-size:10px ;
-    };
-  }
-
 
 .boardOnsel{
     text-align: center;
@@ -276,8 +312,8 @@ ul {
 }
 
 #myButton {
-    height: 18%;
-    width: 28%;
+    height: 100% ;
+    width: 100% ;
     padding: 2%;
     margin-top: 2%;
     margin-bottom: 5%

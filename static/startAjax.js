@@ -18,6 +18,7 @@ function initStart(start,message) {
         let idButton = document.getElementById("myButton");
         event.preventDefault();
         console.log(idButton.innerHTML);
+        inGame();
         if(idButton.innerHTML === 'Perros' || idButton.innerHTML === 'Gatos'){
             $.ajax({
                 url: '/get-data',
@@ -99,7 +100,6 @@ function initStart(start,message) {
                     },500);
                 },500);
             },10000);
-
         }else{
             $(message).html('Por favor selecciona PERROS o GATOS para iniciar el juego.');
         };
