@@ -1,16 +1,15 @@
+/FINALSTAGE-
+Cuando se gana, que el tamaño de la vista no se incremente.
+Oragnizar que quede centrado el div una vez se guarda la puntuación
+Ajustar para tamaño tablet
+/
 
-- CAMBIAR TAMAÑO DE DISTRIBUCIÓN Y OCULTAR ELEMENTOS NO necesarios
-PARA QUE NO ESTROBEN
-
-FASE X  - SELECCIONAR PERROS - GATOS, JUGAR | VER TABLA DE RESULTADOS
-FASE X1 - JUEGO - VUELTA A MENU PRINCIPAL (SALIR) 
-FASE X2 - RESULTADOS - VUELTA A MENU PRINCIPAL (SALIR)
 Oragnizar vistas para las fases.
 Que luzcan organizadas.
 
 Tamaños para 'responsiveness on mobile devices' desde DEVTOOLS (FN + F12)
 movil - (W 412 - 280).
-
+tablet - (2 820px)
 #Animación de mezcla, antes de iniciar memorama
 https://www.lambdatest.com/blog/css-animations-tutorial/
 #Eliminar algunos de los displays no necesarios.

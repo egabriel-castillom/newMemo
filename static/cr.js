@@ -15,6 +15,9 @@
         }
         tiempoRestante -= 1;
         if (tiempoRestante === 0) {
+            //El tiempo se ha acabado, entoces finalstage 
+            //sólo puede mostrar 1 elemento a la vez
+            modCssColumn('.finalStage', '1fr')
             setTimeout(function() {
                 let valor1 = '1'
                 fetch('/get-data?valor1=' + valor1,{method:'GET',headers: {'Content-Type':'application/json'}})
@@ -25,8 +28,9 @@
                   $('#cuenta-regresiva').html('¡SE HA ACABADO EL TIEMPO!');
                 })
                 .catch(error => console.error(error))
-              }, 1000);
-            let marcos = document.querySelectorAll(".marco");
+              }, 1000); 
+
+              let marcos = document.querySelectorAll(".marco");
             for (let i = 0; i < marcos.length; i++) {
                 let inputs = marcos[i].querySelectorAll("input");
                 for (let j = 0; j < inputs.length; j++) {
@@ -50,5 +54,5 @@
 var igualASesenta = function () {
     var elementoCuentaRegresiva = document.getElementById('cuenta-regresiva');
     sessionStorage.setItem('tiempoRestante','60');
-    elementoCuentaRegresiva.textContent = '1 Minuto.'
+    elementoCuentaRegresiva.textContent = 'Tienes 1 minuto, elige una opción para comenzar'
 }

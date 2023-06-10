@@ -7,8 +7,12 @@ button.addEventListener('click', event => {
   if (selectedValue === 'Perros') {
     // Código para modificar la plantilla cuando se selecciona perros
     document.body.style.backgroundImage = "url('static/dog.jpg')";
+    let startIn = document.querySelector("#startMemo");
+    startIn.disabled = false;
   } else if (selectedValue === 'Gatos') {
     // Código para modificar la plantilla cuando se selecciona gatos
     document.body.style.backgroundImage = "url('static/cat.jpg')";
+    let startIn = document.querySelector("#startMemo");
+    startIn.disabled = false;
   }
 });

@@ -78,6 +78,11 @@ body {
     display: none;
 }
 
+.finalStage{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 .message {
     text-align: center;
 }
@@ -146,6 +151,7 @@ body {
 }
 
 .tiempo {
+    padding-top:3%;
     text-align: center;
     font-size: 130%;
 }
@@ -170,14 +176,14 @@ body {
 
 @media (max-width: 646px) {
     .espacioJuego { 
-      padding-left:15% ;
-      height: 70%;
-      width: 85%;
+      padding-left:5% ;
+      height: 100%;
+      width: 95%;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: repeat(6, 1fr);
     }
     .MID{
-        height: 150%;    
+        height: 100%;    
     }
     .switch{
         font-size:15px ;

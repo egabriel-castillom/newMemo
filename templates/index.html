@@ -30,14 +30,16 @@
             </div>
             <form id="start" class="carta" method="get">        
                 <input hidden name="id" id="id" value="x">
-                <input id='startMemo' class="switch" type="submit" value=" INICIAR MEMORAMA "/>             
+                <input id='startMemo' class="switch" type="submit" value=" INICIAR MEMORAMA " disabled/>             
             </form>    
-            <form id="save" class="carta" method="get">                    
-                <input class="switch" type="submit" value=" GUARDAR MEMORAMA "/>             
-            </form>    
-            <form id="restart" class="carta" method="get">                                    
-                <input class="switch" type="submit" value=" REINICIAR SIN GUARDAR "/>             
-            </form>    
+            <div class="finalStage">
+                <form id="save" class="carta" method="get">                    
+                    <input class="switch" type="submit" value=" GUARDAR MEMORAMA "/>             
+                </form>    
+                <form id="restart" class="carta" method="get">                                    
+                    <input class="switch" type="submit" value=" REINICIAR SIN GUARDAR "/>             
+                </form>    
+            </div>
             <div id='container' class="contMR">
                 <button id="myResults" onclick="viewResults()">VER RESULTADOS</button>
             </div>

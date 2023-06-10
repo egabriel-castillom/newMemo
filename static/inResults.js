@@ -1,5 +1,5 @@
 function viewResults() {
-    modCssRule('body','.1fr .1.9fr');
+    modCssColumn('body','.1fr .1.9fr');
     let board = document.querySelector('.notContRboard');
     board.classList.remove('notContRboard');
     board.classList.add('Rboard');

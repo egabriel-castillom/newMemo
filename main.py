@@ -111,14 +111,13 @@ def crear_app():
             elif request.form.get('id') == 'x':
                 id = 1
                 session['start'] = id
-                message = 'Elige una opcion.'
-                return jsonify(message=message)
+                return jsonify(message='')
             elif session.get('start'):
                 return roundId()
         elif request.method=='GET':
             if session.get('F'):
                 session.pop('F',None)
-                return jsonify(message='Vuelve a seleccionar.',rfo='')
+                return jsonify(message='',rfo='')
             else:
                 P = 0            
                 session.clear()
