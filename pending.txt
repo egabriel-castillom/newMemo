@@ -1,7 +1,8 @@
 /FINALSTAGE-
-Cuando se gana, que el tamaño de la vista no se incremente.
 Oragnizar que quede centrado el div una vez se guarda la puntuación
+Ajustar tamaño Rboard
 Ajustar para tamaño tablet
+
 /
 
 Oragnizar vistas para las fases.

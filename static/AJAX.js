@@ -157,7 +157,9 @@ function setupForm() {
                         let sv = document.getElementById('save')
                         let rr = document.getElementById('restart')
                         sv.style.display = 'inline'
+                        sv.style.marginRight = '20%'
                         rr.style.display = 'inline'
+                        rr.style.marginLeft = '20%'
                       }, 3000);                      
                   }
                   }          
