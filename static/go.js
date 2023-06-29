@@ -61,6 +61,9 @@ function  gameOverSave (formNameid) {
         message = document.querySelector('.message');
         message.classList.remove('message');
         message.classList.add('notMessage');
+        modCssColumn('.finalStage','1fr')
+        let rr = document.getElementById('restart')
+        rr.style.marginLeft = '0%'
     });
 };
 //let tiempo = retrieveDict['game0']['tiempo'];

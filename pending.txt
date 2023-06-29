@@ -1,20 +1,6 @@
-/FINALSTAGE-
-Oragnizar que quede centrado el div una vez se guarda la puntuación
-Ajustar tamaño Rboard
-Ajustar para tamaño tablet
-
-/
-
-Oragnizar vistas para las fases.
-Que luzcan organizadas.
-
-Tamaños para 'responsiveness on mobile devices' desde DEVTOOLS (FN + F12)
-movil - (W 412 - 280).
-tablet - (2 820px)
-#Animación de mezcla, antes de iniciar memorama
+** Arreglar la transición después de 'hover' hacia abajo **
+#EN PORTAFIOLIO, AGREGAR SONIDOS CHIDOTES PA#
 https://www.lambdatest.com/blog/css-animations-tutorial/
-#Eliminar algunos de los displays no necesarios.
 #AZURE DEPLOYMENT FOR HOSTING AND CUSTOM URL.
 #Refactoriza el código, que luzca elegante.
 
-#EN PORTAFIOLIO, AGREGAR SONIDOS CHIDOTES PA#

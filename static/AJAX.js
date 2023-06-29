@@ -136,7 +136,6 @@ function setupForm() {
                     };
                   }
                   if (data.PA !== undefined){
-                    $(pAid).html(data.PA);
                     sessionStorage.removeItem('selSw');
                     //Cuando se ha completado un juego con todos los puntos, genera variable de lastGameWin.
                     if (data.PA.includes('6')){
@@ -151,11 +150,11 @@ function setupForm() {
                         .then(data => {
                           $('#message').html('');  
                           $('#rf').html('');
-                          $('#cuenta-regresiva').html('NUEVO RECORD: ' + sessionStorage.getItem('record')+' segundos!');
+                          $('#cuenta-regresiva').html('RECORD: ' + sessionStorage.getItem('record')+' s.');
                         })
                         .catch(error => console.error(error))
                         let sv = document.getElementById('save')
-                        let rr = document.getElementById('restart')
+                        let rr = document.getElementById('restart')                      
                         sv.style.display = 'inline'
                         sv.style.marginRight = '20%'
                         rr.style.display = 'inline'

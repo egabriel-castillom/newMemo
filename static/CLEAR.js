@@ -9,3 +9,4 @@ function clearSC(){ //Al seleccionar el botón clear, ejecutar la instrucción
     sessionStorage.setItem('myDict', JSON.stringify(tempd));
     sessionStorage.setItem('games', tempg);
 }
+
